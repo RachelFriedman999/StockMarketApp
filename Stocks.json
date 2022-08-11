@@ -1,0 +1,92 @@
+[
+  {
+    "Id": "1",
+    "Name": "Advanced Micro Devices, Inc.",
+    "Price": "99.00",
+    "Description": "",
+    "Commission": "10.2",
+    "SpecialRemarks": "",
+    "LastUpdate": ""
+  },
+  {
+    "Id": "2",
+    "Name": "Carnival Corporation & plc",
+    "Price": "10.40",
+    "Description": "",
+    "Commission": "4.5",
+    "SpecialRemarks": "",
+    "LastUpdate": ""
+  },
+  {
+    "Id": "3",
+    "Name": "AMC Entertainment Holdings, Inc.",
+    "Price": "23.52",
+    "Description": "",
+    "Commission": "3.2",
+    "SpecialRemarks": "",
+    "LastUpdate": ""
+  },
+  {
+    "Id": "4",
+    "Name": "Roblox Corporation",
+    "Price": "47.86",
+    "Description": "",
+    "Commission": "7",
+    "SpecialRemarks": "",
+    "LastUpdate": ""
+  },
+  {
+    "Id": "5",
+    "Name": "NVIDIA Corporation",
+    "Price": "180.22",
+    "Description": "",
+    "Commission": "40.1",
+    "SpecialRemarks": "",
+    "LastUpdate": ""
+  },
+  {
+    "Id": "6",
+    "Name": "Apple Inc.",
+    "Price": "169.01",
+    "Description": "",
+    "Commission": "35.2",
+    "SpecialRemarks": "",
+    "LastUpdate": ""
+  },
+  {
+    "Id": "7",
+    "Name": "Plug Power Inc.",
+    "Price": "28.93",
+    "Description": "",
+    "Commission": "4.2",
+    "SpecialRemarks": "",
+    "LastUpdate": ""
+  },
+  {
+    "Id": "8",
+    "Name": "SoFi Technologies, Inc.",
+    "Price": "7.82",
+    "Description": "",
+    "Commission": "0.2",
+    "SpecialRemarks": "",
+    "LastUpdate": ""
+  },
+  {
+    "Id": "9",
+    "Name": "Amazon.com, Inc.",
+    "Price": "142.77",
+    "Description": "",
+    "Commission": "32.7",
+    "SpecialRemarks": "",
+    "LastUpdate": ""
+  },
+  {
+    "Id": "10",
+    "Name": "AT&T Inc.",
+    "Price": "18.06",
+    "Description": "",
+    "Commission": "2.4",
+    "SpecialRemarks": "",
+    "LastUpdate": ""
+  }
+]
