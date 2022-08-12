@@ -15,10 +15,11 @@ NOTE: This project runs on .NetCore 3
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Below is a list of on to get started
-To get started, Clone the repo, open Visual Studio and run the app with IIS EXPRESS.
-To filter stocks by date, add the date parameter to the url in the format yyyy-MM-dd'T'HH:mm:ss. 
-e.g. //localhost:38948/api/Stocks?fromDate=2022-08-11T18:32
+To get started:
+1. Clone the repo from https://github.com/RachelFriedman999/StockMarketApp.git
+2. Open Visual Studio and run the app with IIS EXPRESS.
+3. To filter stocks by date, add the date parameter to the url in the format yyyy-MM-dd'T'HH:mm:ss. 
+   e.g. //localhost:38948/api/Stocks?fromDate=2022-08-11T18:32
 
 
 ### TODO
