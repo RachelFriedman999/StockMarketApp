@@ -22,7 +22,7 @@ namespace StockMarketApp.Controllers
             _logger = logger;
             _stocksManager = stockManager;
         }
-        //http://localhost:38948/api/Stocks?fromDate=2022-08-11T18:32:00
+
         [HttpGet]
         public IActionResult Get(DateTime? fromDate = null)
         {

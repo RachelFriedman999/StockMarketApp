@@ -20,13 +20,13 @@ namespace StockMarketApp
         {
             _logger = logger;
             _stocksManager = stockManager;
-
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             int indx, actionType, updatePrice;
-            try {
+            try
+            {
                 var stocks = _stocksManager.Stocks;
                 while (!stoppingToken.IsCancellationRequested)
                 {
@@ -34,13 +34,14 @@ namespace StockMarketApp
 
                     indx = rnd.Next(stocks.Count - 1);
                     actionType = rnd.Next(0, 1);
-                    updatePrice = rnd.Next(1,3);
+                    updatePrice = rnd.Next(1, 3);
 
-                    if (actionType == 0) 
+                    if (actionType == 0 && stocks[indx].Price - updatePrice > 0)
                     {
                         stocks[indx].Price -= updatePrice;
-                    } 
-                    else {
+                    }
+                    else
+                    {
                         stocks[indx].Price += updatePrice;
                     }
 
@@ -50,8 +51,10 @@ namespace StockMarketApp
 
                     await Task.Delay(60000, stoppingToken);
                 }
-            } catch (Exception ex) {
-                _logger.Log(LogLevel.Error, ex.ToString());
+            }
+            catch (Exception ex)
+            {
+                _logger.Log(LogLevel.Error, "failed in worker:" + ex.ToString());
                 throw ex;
             }
         }

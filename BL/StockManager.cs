@@ -44,7 +44,7 @@ namespace StockMarketApp.BL
             }
             catch (Exception ex)
             {
-                _logger.Log(LogLevel.Error, ex.ToString());
+                _logger.Log(LogLevel.Error, "failed in StocksManager.ReadFromFile:" + ex.ToString());
                 throw ex;
             }
             return res;
@@ -79,7 +79,7 @@ namespace StockMarketApp.BL
 
         public List<Stock> GetStocks(DateTime? fromDate = null)
         {
-            List<Stock> res;
+            var res = Stocks;
             try
             {
                 if (fromDate != null)
@@ -87,11 +87,12 @@ namespace StockMarketApp.BL
                     res = Stocks?.Where(stock => stock.LastUpdate > fromDate)?.ToList();
                 }
             }
-            catch (Exception ex) {
-                _logger.Log(LogLevel.Error, ex.ToString());
+            catch (Exception ex)
+            {
+                _logger.Log(LogLevel.Error, "failed in StocksManager.GetStocks:" + ex.ToString());
                 throw;
             }
-            return this.Stocks;
+            return res;
         }
     }
 }
