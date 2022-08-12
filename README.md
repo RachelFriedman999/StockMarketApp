@@ -20,7 +20,7 @@ To get started:
 2. Open Visual Studio and run the app with IIS EXPRESS.
 3. To filter stocks by date, add the date parameter to the url in the format yyyy-MM-dd'T'HH:mm:ss. 
    e.g. //localhost:38948/api/Stocks?fromDate=2022-08-11T18:32
-   4. To see logs in run time, open output window and on the top lwft dropdown select the project StockMarketApp.
+4. To see logs in run time, open output window and on the top left dropdown select the project StockMarketApp.
 
 
 ### TODO
