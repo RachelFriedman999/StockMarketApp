@@ -22,39 +22,40 @@ namespace StockMarketApp
             _stocksManager = stockManager;
         }
 
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+      protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             int indx, actionType, updatePrice;
-            try
-            {
+            try {
                 var stocks = _stocksManager.Stocks;
                 while (!stoppingToken.IsCancellationRequested)
                 {
                     _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
-                    indx = rnd.Next(stocks.Count - 1);
-                    actionType = rnd.Next(0, 1);
-                    updatePrice = rnd.Next(1, 3);
-
-                    if (actionType == 0 && stocks[indx].Price - updatePrice > 0)
+                    if (stocks != null && stocks.Count > 0) 
                     {
-                        stocks[indx].Price -= updatePrice;
-                    }
-                    else
-                    {
-                        stocks[indx].Price += updatePrice;
-                    }
+                        indx = rnd.Next(stocks.Count - 1);
+                        actionType = rnd.Next(0, 1);
+                        updatePrice = rnd.Next(1, 3);
 
-                    stocks[indx].LastUpdate = DateTime.Now;
+                        if (actionType == 0)
+                        {
+                            stocks[indx].Price -= updatePrice;
+                        }
+                        else
+                        {
+                            stocks[indx].Price += updatePrice;
+                        }
 
-                    _logger.LogInformation("Updated Stock {name}: old price {oldPrice}, new price {newPrice}", stocks[indx].Name, actionType == 0 ? stocks[indx].Price + updatePrice : stocks[indx].Price - updatePrice, stocks[indx].Price);
+                        stocks[indx].LastUpdate = DateTime.Now;
+
+                        _logger.LogInformation("Updated Stock {name}: old price {oldPrice}, new price {newPrice}", stocks[indx].Name, actionType == 0 ? stocks[indx].Price + updatePrice : stocks[indx].Price - updatePrice, stocks[indx].Price);
+
+                    }
 
                     await Task.Delay(60000, stoppingToken);
                 }
-            }
-            catch (Exception ex)
-            {
-                _logger.Log(LogLevel.Error, "failed in worker:" + ex.ToString());
+            } catch (Exception ex) {
+                _logger.Log(LogLevel.Error, ex.ToString());
                 throw ex;
             }
         }
